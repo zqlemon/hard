@@ -1,5 +1,7 @@
 package tokeniz;
 
+import sun.misc.JavaAWTAccess;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
@@ -17,8 +19,8 @@ public class abc{
     //指向当前所读到字符串的位置的指针
     static int p, lines;
 
-    public static void main(String[] args) throws FileNotFoundException {
-        file("/home/zq/桌面/cobm");
+    public static void main(String[] args) {
+     sql( "put tableName,'rowKey','columnFamily:column','value';");
 //        for (String tmp : kW) {
 //            System.out.println(tmp + " ");
 //        }
@@ -27,17 +29,11 @@ public class abc{
 //            System.out.println(tmp + " ");
 //        }//可输出查看有什么关键字或者非关键字
   }
-    public static void file(String ac) throws FileNotFoundException {
+    public static void sql(String ac) {
         change();
-        File file = new File(ac);//"/home/zq/桌面/cobm"
-        lines = 1;
-        try (Scanner input = new Scanner(file)) {
-            while (input.hasNextLine()) {
+        Scanner input = new Scanner(ac);
                 String str = input.nextLine();
                 analyze(str);
-                lines++;
-            }
-        }
     }
     //初始化把数组转换为ArrayList
     public  static void change() {
@@ -46,6 +42,7 @@ public class abc{
     }
 
     public static void analyze(String str) {
+
         p = 0;
         char ch;
         str = str.trim();
