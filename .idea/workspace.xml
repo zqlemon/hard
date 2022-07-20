@@ -2,22 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e416eb89-fa9a-4b60-bc36-ed98422a8743" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/tokenizer/tokeniz/Tok.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/tokenizer/tokeniz/TokenizImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tokeniz/Tok.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tokeniz/TokenizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tokenizer/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tokenizer/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tokenizer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tokenizer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/tokenizer/tokeniz/abc.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tokenizer/tokeniz/abc.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tokeniz/Tok.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tokeniz/TokenizImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tokeniz/abc.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tokeniz/abc.java" beforeDir="false" afterPath="$PROJECT_DIR$/tokeniz/abc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tokenizer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tokenizer.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +76,7 @@
       <workItem from="1649859569100" duration="273000" />
       <workItem from="1649859859782" duration="6659000" />
       <workItem from="1658139220560" duration="20204000" />
-      <workItem from="1658302577095" duration="1175000" />
+      <workItem from="1658302577095" duration="1753000" />
     </task>
     <servers />
   </component>

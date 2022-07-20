@@ -218,7 +218,7 @@ public class abc{
         if (keyWords.contains(toke)) {
             kW.add(toke);
             }
-         else {
+         else if(!toke.equals("values")){
             unkeyWords.add(toke);
         }
         if (p != str.length() - 1 || (p == str.length() - 1 && (!Character.isLetterOrDigit(str.charAt(p)) && str.charAt(p) != '_'))) {
