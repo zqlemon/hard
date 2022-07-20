@@ -1,50 +1,86 @@
 package tokeniz;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import com.sun.istack.internal.localization.NullLocalizable;
+
 import java.util.*;
 
-public class abc {
+public class abc{
     //关键字
     static String[] keyWord = {"into", "use", "show", "database", "create",
             "table", "drop", "alter", "database", "NAME", "put", "LIMIT",
             "METHOD", "get", "list", "delete", "deleteall", "STARTROW",
             "ENDROW", "enable", "disable", "scan", "count", "exsits",
-            "describle", "truncate", "{", "}", ",", "=>", ":", "=", ">", ";"};
-    static ArrayList<String> keyWords = null;
+            "describle", "truncate", "{", "}", ",","=>",":", ";"};
     static List<String> kW = new ArrayList<String>();
-    static List<String> unkeyWords = new ArrayList<String>();
+    static  List<String> unkeyWords = new ArrayList<String>();
+    static ArrayList<String> keyWords = null;
+    //put values{}分支
+    static String[] keyWord1 ={"{", "}",":","put"};
+    static ArrayList<String> keyWords1 = null;
     //指向当前所读到字符串的位置的指针
     static int p, lines;
+    public static void pv(){
+
+    }
 
 
-    public static void main(String[] args) throws FileNotFoundException {
-        change();
-        File file = new File("/home/zq/桌面/cobm");
-        lines = 1;
-        try (Scanner input = new Scanner(file)) {
-            while (input.hasNextLine()) {
-                String str = input.nextLine();
-                analyze(str);
-                lines++;
-            }
-        }
+    public static void main(String[] args) {
+     sql( "put values{infp1:id,xxx,info2:name,yyy,info1:age,12};");
         for (String tmp : kW) {
             System.out.println(tmp + " ");
         }
         System.out.println("\n");
         for (String tmp : unkeyWords) {
             System.out.println(tmp + " ");
+        }//可输出查看有什么关键字或者非关键字
+  }
+    public static void sql(String ac) {
+
+        if(letterCheck1(ac)){
+            change1();
+            Scanner input = new Scanner(ac);
+            String str = input.nextLine();
+            analyze1(str);
+    }
+        else{
+            change();
+            Scanner input = new Scanner(ac);
+            String str = input.nextLine();
+            analyze(str);}
         }
+        //put values{}分支
+    public static boolean letterCheck1(String str) {
+       p = 0;
+        char ch;
+        str = str.trim();
+        for (; p < str.length(); p++) {
+            ch = str.charAt(p);
+            if (Character.isDigit(ch)) {
+                digitCheck(str);
+            }
+            else if (ch == ' '&&ch == ':'&&ch == ',') {
+                continue;
+            } else if (Character.isLetter(ch) || ch == '_'||ch=='='||ch=='>') {
+                String toke = String.valueOf(str.charAt(p++));
+                char c;
+                for (; p < str.length(); p++) {
+                    c = str.charAt(p);
+                    if (!Character.isLetterOrDigit(c) && c != '_' && c != '=' && c != '>') {
+                        break;
+                    } else {
+                        toke += c;
+                    }
+                }
+                if (toke.equals("values")) {
+                    return true;
+                }
+            }
+            else {
+                symbolCheck1(str);
+            }}
+        return false;
     }
-
-    //初始化把数组转换为ArrayList
-    public static void change() {
-        keyWords = new ArrayList<>();
-        Collections.addAll(keyWords, keyWord);
-    }
-    public static void analyze(String str) {
-
+    public static void analyze1(String str) {
         p = 0;
         char ch;
         str = str.trim();
@@ -52,22 +88,81 @@ public class abc {
             ch = str.charAt(p);
             if (Character.isDigit(ch)) {
                 digitCheck(str);
-            } else if (Character.isLetter(ch) || ch == '_') {
+            }
+            else if (ch == ' '&&ch == ':'&&ch == ',') {
+                continue;
+            } else if (Character.isLetter(ch) || ch == '_'||ch=='='||ch=='>') {
                 letterCheck(str);
-            } else if (ch == '"') {
+            }
+            else if (ch == '"') {
+                stringCheck(str);
+            }
+            else if (ch == '\'') {
+                stringCheck1(str);
+            }
+            else if (ch == ' ') {
+                continue;
+            }
+            else if (ch == ';') {
+                break;
+            }
+            else {
+                symbolCheck1(str);
+            }
+        }
+    }
+    public static void symbolCheck1(String str) {
+        String toke = String.valueOf(str.charAt(p++));
+        char ch;
+        if (keyWords.contains(toke)) {
+            p--;
+            kW.add(toke);}
+        else {
+            if (!keyWords.contains(toke)){
+                p--;
+            }else {
+                p--;
+                System.out.println(lines + "line" + ": " + toke + " is wrong");
+            }
+        }
+    }
+    //初始化把数组转换为ArrayList
+    public  static void change() {
+        keyWords = new ArrayList<>();
+        Collections.addAll(keyWords, keyWord);
+    }
+    public  static void change1() {
+        keyWords = new ArrayList<>();
+        Collections.addAll(keyWords, keyWord1);
+    }
+    public static void analyze(String str) {
+        p = 0;
+        char ch;
+        str = str.trim();
+        for (; p < str.length(); p++) {
+            ch = str.charAt(p);
+            if (Character.isDigit(ch)) {
+                digitCheck(str);
+            } else if (Character.isLetter(ch) || ch == '_'||ch=='='||ch=='>') {
+                letterCheck(str);
+            }
+            else if (ch == '"') {
                 stringCheck(str);
             } else if (ch == '\'') {
                 stringCheck1(str);
-            } else if (ch == ' ') {
+            }
+            else if (ch == ' ') {
                 continue;
             } else if (ch == ';') {
-               break;
+                break;
             }
             else {
                 symbolCheck(str);
             }
         }
     }
+
+
 
     public static void digitCheck(String str) {
         String toke = String.valueOf(str.charAt(p++));//转换成字符串
@@ -113,15 +208,17 @@ public class abc {
         char ch;
         for (; p < str.length(); p++) {
             ch = str.charAt(p);
-            if (!Character.isLetterOrDigit(ch) && ch != '_') {
+          if (!Character.isLetterOrDigit(ch) && ch != '_' && ch!='=' && ch!='>'){
                 break;
-            } else {
+            }
+                else {
                 toke += ch;
             }
         }
         if (keyWords.contains(toke)) {
             kW.add(toke);
-        } else {
+            }
+         else {
             unkeyWords.add(toke);
         }
         if (p != str.length() - 1 || (p == str.length() - 1 && (!Character.isLetterOrDigit(str.charAt(p)) && str.charAt(p) != '_'))) {
@@ -134,33 +231,18 @@ public class abc {
         String toke = String.valueOf(str.charAt(p++));
         char ch;
         if (keyWords.contains(toke)) {
-            if (p <str.length()) {
-                ch = str.charAt(p);
-                if (keyWords.contains(toke + ch)) {
-                    toke += ch;
-                    p++;
-                    if (p < str.length()) {
-                        ch = str.charAt(p);
-                        if (keyWords.contains(toke + ch)) {
-                            toke += ch;
-                            unkeyWords.add(toke);
-                        } else {
-                            p--;
-                            unkeyWords.add(toke);
-                        }
-                    } else {
-                        unkeyWords.add(toke);
-                    }
-                } else {
-                    p--;
-                    unkeyWords.add(toke);
-                }
+            p--;
+            kW.add(toke);}
+        else {
+            if (!keyWords.contains(toke)){
+                p--;
+                unkeyWords.add(toke);
+            }else {
+                p--;
+                System.out.println(lines + "line" + ": " + toke + " is wrong");
             }
         }
-        else {
-            p--;
-            System.out.println(lines + "line" + ": " + toke + " is wrong");
-        }
+
     }
 
     //字符串检查
