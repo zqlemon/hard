@@ -19,10 +19,6 @@ public class abc{
     static ArrayList<String> keyWords1 = null;
     //指向当前所读到字符串的位置的指针
     static int p, lines;
-    public static void pv(){
-
-    }
-
 
     public static void main(String[] args) {
      sql( "put values {infp1:id,xxx,info2:name,yyy,info1:age,12};");
