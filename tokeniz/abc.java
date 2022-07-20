@@ -15,7 +15,7 @@ public class abc{
     static  List<String> unkeyWords = new ArrayList<String>();
     static ArrayList<String> keyWords = null;
     //put values{}分支
-    static String[] keyWord1 ={"{", "}",":","put"};
+    static String[] keyWord1 ={"put","values"};
     static ArrayList<String> keyWords1 = null;
     //指向当前所读到字符串的位置的指针
     static int p, lines;
@@ -36,7 +36,7 @@ public class abc{
   }
     public static void sql(String ac) {
 
-        if(letterCheck1(ac)){
+        if(findcode(ac)){
             change1();
             Scanner input = new Scanner(ac);
             String str = input.nextLine();
@@ -48,7 +48,7 @@ public class abc{
             String str = input.nextLine();
             analyze(str);}
         }
-    public static boolean letterCheck1(String str) {
+    public static boolean findcode(String str) {
        p = 0;
         char ch;
         str = str.trim();
@@ -114,7 +114,7 @@ public class abc{
             }
         }
     }
-
+//    put values分支
     public static void analyze1(String str) {
         p = 0;
         char ch;
@@ -127,7 +127,7 @@ public class abc{
             else if (ch == ' '&&ch == ':'&&ch == ',') {
                 continue;
             } else if (Character.isLetter(ch) || ch == '_'||ch=='='||ch=='>') {
-                letterCheck(str);
+                letterCheck1(str);
             }
             else if (ch == '"') {
                 stringCheck(str);
@@ -216,13 +216,39 @@ public class abc{
         if (keyWords.contains(toke)) {
             kW.add(toke);
             }
-         else if(!toke.equals("values")){
+         else {
             unkeyWords.add(toke);
         }
         if (p != str.length() - 1 || (p == str.length() - 1 && (!Character.isLetterOrDigit(str.charAt(p)) && str.charAt(p) != '_'))) {
             p--;
         }
     }
+    public static void letterCheck1(String str) {
+        String toke = String.valueOf(str.charAt(p++));
+        char ch;
+        for (; p < str.length(); p++) {
+            ch = str.charAt(p);
+            if (!Character.isLetterOrDigit(ch) && ch != '_' && ch!='=' && ch!='>'){
+                break;
+            }
+            else {
+                toke += ch;
+            }
+        }
+        if (toke.equals("values")) {//输出固定关键字
+            kW.add("put");
+            kW.add(":");
+            kW.add("{");
+            kW.add("}");
+        }
+        else if (!keyWords.contains(toke)) {
+            unkeyWords.add(toke);
+        }
+        if (p != str.length() - 1 || (p == str.length() - 1 && (!Character.isLetterOrDigit(str.charAt(p)) && str.charAt(p) != '_'))) {
+            p--;
+        }
+    }
+
 
     //    符号的识别
     public static void symbolCheck(String str) {

@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e416eb89-fa9a-4b60-bc36-ed98422a8743" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tokenizer.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tokenizer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tokenizer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tokenizer/tokeniz/abc.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tokenizer/tokeniz/abc.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src" beforeDir="false" afterPath="$PROJECT_DIR$/src" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tokeniz/Tok.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tokeniz/TokenizImpl.java" beforeDir="false" />
@@ -97,7 +94,7 @@
       <workItem from="1658307457291" duration="72000" />
       <workItem from="1658307545830" duration="720000" />
       <workItem from="1658308275645" duration="338000" />
-      <workItem from="1658308972112" duration="300000" />
+      <workItem from="1658308972112" duration="1889000" />
     </task>
     <servers />
   </component>
@@ -119,5 +116,24 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/tokeniz/abc.java</url>
+          <line>225</line>
+          <properties class="tokeniz.abc" method="letterCheck1">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tokeniz/abc.java</url>
+          <line>249</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
