@@ -2,22 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e416eb89-fa9a-4b60-bc36-ed98422a8743" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/tokenizer/tokeniz/Tok.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/tokenizer/tokeniz/TokenizImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tokeniz/Tok.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tokeniz/TokenizImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tokenizer.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tokenizer/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tokenizer/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/tokenizer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tokenizer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/tokenizer/tokeniz/abc.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tokenizer/tokeniz/abc.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src" beforeDir="false" afterPath="$PROJECT_DIR$/src" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tokeniz/Tok.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tokeniz/TokenizImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tokeniz/abc.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tokeniz/abc.java" beforeDir="false" afterPath="$PROJECT_DIR$/tokeniz/abc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tokenizer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tokenizer.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +30,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tokeniz" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -55,7 +48,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Unnamed">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/文档/jdk1.8.0_251" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="tokeniz.abc" />
+      <module name="tokenizer" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="tokeniz." type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -65,6 +67,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.tokeniz." />
+      <item itemvalue="Application.Unnamed" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -85,6 +91,13 @@
       <workItem from="1649859569100" duration="273000" />
       <workItem from="1649859859782" duration="6659000" />
       <workItem from="1658139220560" duration="20204000" />
+      <workItem from="1658302577095" duration="2452000" />
+      <workItem from="1658306073688" duration="18000" />
+      <workItem from="1658306098276" duration="947000" />
+      <workItem from="1658307457291" duration="72000" />
+      <workItem from="1658307545830" duration="720000" />
+      <workItem from="1658308275645" duration="338000" />
+      <workItem from="1658308972112" duration="300000" />
     </task>
     <servers />
   </component>
@@ -106,24 +119,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/tokeniz/abc.java</url>
-          <line>50</line>
-          <properties class="tokeniz.abc" method="letterCheck1">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/tokeniz/abc.java</url>
-          <line>79</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
