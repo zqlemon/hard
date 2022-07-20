@@ -21,7 +21,7 @@ public class abc{
     static int p, lines;
 
     public static void main(String[] args) {
-     sql( "put values {infp1:id,xxx,info2:name,yyy,info1:age,12};");
+     sql( "put values stu1,1001,columnFamily:column,value;");
         for (String tmp : kW) {
             System.out.println(tmp + " ");
         }
@@ -50,10 +50,7 @@ public class abc{
         str = str.trim();
         for (; p < str.length(); p++) {
             ch = str.charAt(p);
-            if (Character.isDigit(ch)) {
-                digitCheck(str);
-            }
-            else if (ch == ' '&&ch == ':'&&ch == ',') {
+                if (ch == ' '&&ch == ':'&&ch == ',') {
                 continue;
             } else if (Character.isLetter(ch) || ch == '_'||ch=='='||ch=='>') {
                 String toke = String.valueOf(str.charAt(p++));
@@ -70,9 +67,7 @@ public class abc{
                     return true;
                 }
             }
-            else {
-                symbolCheck1(str);
-            }}
+        }
         return false;
     }
     //初始化把数组转换为ArrayList
@@ -137,26 +132,9 @@ public class abc{
         else if (ch == ';') {
                 break;
             }
-            else {
-                symbolCheck1(str);
-            }
         }
     }
-    public static void symbolCheck1(String str) {
-        String toke = String.valueOf(str.charAt(p++));
-        char ch;
-        if (keyWords.contains(toke)) {
-            p--;
-            kW.add(toke);}
-        else {
-            if (!keyWords.contains(toke)){
-                p--;
-            }else {
-                p--;
-                System.out.println(lines + "line" + ": " + toke + " is wrong");
-            }
-        }
-    }
+
 
     public static void digitCheck(String str) {
         String toke = String.valueOf(str.charAt(p++));//转换成字符串
